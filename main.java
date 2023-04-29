@@ -34,7 +34,19 @@ public class Main {
   *         or -1 if the vertex is not reachable from the source.
   */
   public int[] getHamiltonianPath(Graph g) {
+    int numVertices = g.getNumberOfVertices();
+    int[] distances = new int[numVertices];
+    
+    //Initialise distances to -1
+    for (int i = 0; i < numVertices; i++) {
+      distances[i] = -1;
+    }
+    
+    //A naive option is to run N depth first searches and check if the depth is equal to N,
+    //however this has time complexity of O(N^2)
+    
     // look into https://teaching.csse.uwa.edu.au/units/CITS2200/Resources/CITS2200Doc/CITS2200/Path.html
+    return distances;
   }
   
   /**
