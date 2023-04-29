@@ -61,18 +61,21 @@ public interface CITS2200Project {
 	 * @return a Hamiltonian path of the page graph.
 	 */
 	public String[] getHamiltonianPath() {
-    int numVertices = g.getNumberOfVertices();
-    int[] distances = new int[numVertices];
+    		int numVertices = g.getNumberOfVertices();
     
-    //Initialise distances to -1
-    for (int i = 0; i < numVertices; i++) {
-      distances[i] = -1;
-    }
+    		/*
+		for url in graph:
+			DFS
+			if DFS.len == numV:
+				return DFS
+		return []
+		
+		*/
+    		
+    		//A naive option is to run N depth first searches and check if the depth is equal to N,
+    		//however this has time complexity of O(N^2)
     
-    //A naive option is to run N depth first searches and check if the depth is equal to N,
-    //however this has time complexity of O(N^2)
-    
-    // look into https://teaching.csse.uwa.edu.au/units/CITS2200/Resources/CITS2200Doc/CITS2200/Path.html
-    return distances;
-  }
+    		// look into https://teaching.csse.uwa.edu.au/units/CITS2200/Resources/CITS2200Doc/CITS2200/Path.html
+    		//return ;
+  	}
 }
