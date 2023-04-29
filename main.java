@@ -1,39 +1,66 @@
-/**
- * 
- */
-public class Main {
+public interface CITS2200Project {
   /**
-  * Question 1. Write a method that, given a pair of pages, 
-  * returns the minimum number of links you must follow to get from the first page to the second. 
-  * See (https://en.wikipedia.org/wiki/Shortest_path_problem) for more information.
-  */
-  /**
-  * A really good description of the function
-  * 
-  * @param pageStart    The page to start searching from
-  * @param pageEnd      The page to search for
-  * 
-  * @return the minimum number of links
-  */
-  public int getMinimumLinks(String pageStart, String pageEnd) {
+	 * Adds an edge to the Wikipedia page graph. If the pages do not
+	 * already exist in the graph, they will be added to the graph.
+	 * 
+	 * @param urlFrom the URL which has a link to urlTo.
+	 * @param urlTo the URL which urlFrom has a link to.
+	 */
+	public void addEdge(String urlFrom, String urlTo) {
     
   }
-  
-  /**
-  * Question 2. Write a method that finds a Hamiltonian path in a Wikipedia page graph. 
-  * A Hamiltonian path is any path in some graph that visits every vertex exactly once. 
-  * This method will never be called for graphs with more than 20 pages. 
-  * See (https://en.wikipedia.org/wiki/Hamiltonian_path) for more information about Hamiltonian paths.
-  */
-  /**
-  * A really good description of the function
-  * 
-  * @param g    The graph representing the wikipedia pages
-  * 
-  * @return an array listing the distance to each vertex in the single source shortest path problem, 
-  *         or -1 if the vertex is not reachable from the source.
-  */
-  public int[] getHamiltonianPath(Graph g) {
+
+	/**
+	 * Finds the shorest path in number of links between two pages.
+	 * If there is no path, returns -1.
+	 * 
+	 * @param urlFrom the URL where the path should start.
+	 * @param urlTo the URL where the path should end.
+	 * @return the legnth of the shorest path in number of links followed.
+	 */
+	public int getShortestPath(String urlFrom, String urlTo) {
+    
+  }
+
+	/**
+	 * Finds all the centers of the page graph. The order of pages
+	 * in the output does not matter. Any order is correct as long as
+	 * all the centers are in the array, and no pages that aren't centers
+	 * are in the array.
+	 * 
+	 * @return an array containing all the URLs that correspond to pages that are centers.
+	 */
+	public String[] getCenters() {
+    
+  }
+
+	/**
+	 * Finds all the strongly connected components of the page graph.
+	 * Every strongly connected component can be represented as an array 
+	 * containing the page URLs in the component. The return value is thus an array
+	 * of strongly connected components. The order of elements in these arrays
+	 * does not matter. Any output that contains all the strongly connected
+	 * components is considered correct.
+	 * 
+	 * @return an array containing every strongly connected component.
+	 */
+	public String[][] getStronglyConnectedComponents() {
+    
+  }
+
+	/**
+	 * Finds a Hamiltonian path in the page graph. There may be many
+	 * possible Hamiltonian paths. Any of these paths is a correct output.
+	 * This method should never be called on a graph with more than 20
+	 * vertices. If there is no Hamiltonian path, this method will
+	 * return an empty array. The output array should contain the URLs of pages
+	 * in a Hamiltonian path. The order matters, as the elements of the
+	 * array represent this path in sequence. So the element [0] is the start
+	 * of the path, and [1] is the next page, and so on.
+	 * 
+	 * @return a Hamiltonian path of the page graph.
+	 */
+	public String[] getHamiltonianPath() {
     int numVertices = g.getNumberOfVertices();
     int[] distances = new int[numVertices];
     
@@ -47,39 +74,5 @@ public class Main {
     
     // look into https://teaching.csse.uwa.edu.au/units/CITS2200/Resources/CITS2200Doc/CITS2200/Path.html
     return distances;
-  }
-  
-  /**
-  * Question 3. Write a method that finds every ‘strongly connected component’ of pages. 
-  * A strongly connected component is a set of vertices such that there is a path 
-  * between every ordered pair of vertices in the strongly connected component. 
-  * See (https://en.wikipedia.org/wiki/Strongly_connected_component) for more information about strongly connected components.
-  */
-  /**
-  * A really good description of the function
-  * 
-  * @param g    The graph representing the wikipedia pages
-  * 
-  * @return i am unsure what it returns
-  */
-  public unknown_type getStrongConnections(Graph g) {
-    
-  }
-  
-  /**
-  * Question 4. Write a method that finds all the centers of the Wikipedia page graph. 
-  * A vertex is considered to be the center of a graph if the maximum shortest 
-  * path from that vertex to any other vertex is the minimum possible. 
-  * See (https://en.wikipedia.org/wiki/Graph_center) for more information about ‘graph center’.
-  */
-  /**
-  * A really good description of the function
-  * 
-  * @param g    The graph representing the wikipedia pages
-  * 
-  * @return i am unsure what it returns
-  */
-  public unknown_type getCentres(Graph g) {
-    
   }
 }
